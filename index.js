@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-app.listen(3000, () => {
-  console.log("Listening port 3000...")
+app.listen(80, () => {
+  console.log("Listening port 80...")
 });
 
