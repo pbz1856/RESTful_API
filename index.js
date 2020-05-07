@@ -1,19 +1,15 @@
 const express = require("express");
 const app = express();
+const rootRouter = require('./routers/root');
+const genresRouter = require('./routers/genres');
+
+app.use(rootRouter);
+app.use(genresRouter);
 
 const port = process.env.port || 3000;
 
 app.listen(port, () => {
   console.log(`Listening port ${port}...`);
-});
-
-app.get('/', (req, res, next) => {
-  res.send('Welcome to the API endpont');
-});
-
-app.get('/api/genres', (req, res, next) => {
-
-  res.send('This is Genres');
 });
 
 // TODO
