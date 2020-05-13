@@ -1,4 +1,4 @@
-const lib = require("../../util/util");
+const lib = require("../../../util/util");
 
 describe('Util Test', () => {
   describe('makeId function - ', () => {
@@ -10,8 +10,13 @@ describe('Util Test', () => {
     test('should throw an Error if the input is negative number', () => {
       expect(() => lib.makeId(-1)).toThrow(Error);
     });
-    test('should return same length of string as its input', () => {
+
+    test('should throw an Error if the input is not positive number', () => {
       expect(() => lib.makeId("")).toThrow(Error);
+      expect(() => lib.makeId("abc")).toThrow(Error);
+      expect(() => lib.makeId(null)).toThrow(Error);
+      expect(() => lib.makeId(undefined)).toThrow(Error);
+      expect(() => lib.makeId(true)).toThrow(Error);
     });
   });
 });
