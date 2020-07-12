@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 const rootRouter = require('./routers/root');
 const genresRouter = require('./routers/genres');
+const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(rootRouter);
 app.use(genresRouter);
 

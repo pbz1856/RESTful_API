@@ -4,9 +4,11 @@ const { makeId } = require("../util/util");
 
 const ID_LENGTH = 20;
 
-router.get('/', (req, res, next) => {
-  res.send('Welcome to the API endpont');
-});
+router.post('/v1/genres', (req, res, next) => {
+  console.log(req.body);
+  res.send('POST endpoint');
+})
+
 
 // Default
 router.get('/v1/genres', (req, res, next) => {
@@ -21,5 +23,9 @@ router.get('/v1/genres/:id', (req, res, next) => {
 router.get('/v1/genres', (req, res, next) => {
   res.send('This is Genres');
 });
+
+router.post('/v1/genres', (req, res, next) => {
+  res.send('Received Post');
+})
 
 module.exports = router;
